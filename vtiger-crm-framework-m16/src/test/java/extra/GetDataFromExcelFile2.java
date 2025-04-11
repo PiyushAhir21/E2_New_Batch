@@ -11,7 +11,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-public class GetDataFromExcelFile {
+public class GetDataFromExcelFile2 {
 	public static void main(String[] args) throws EncryptedDocumentException, IOException {
 //		create java representation object of the physical file
 		FileInputStream fis = new FileInputStream("C:\\Users\\User\\Desktop\\testScriptDataE2.xlsx");
