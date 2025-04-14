@@ -3,39 +3,35 @@ package leadsTest;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Properties;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import generic_utility.FileUtility;
+import generic_utility.WebDriverUtility;
+
 public class CreateLeadsWithPhoneTest {
 	public static void main(String[] args) throws IOException, InterruptedException {
-//		getting data from properties file
-		FileInputStream fis = new FileInputStream(
-				"C:\\Users\\User\\git\\E2_new_batch\\vtiger-crm-framework-m16\\src\\test\\resources\\commonData.properties");
-		Properties pObj = new Properties();
-		pObj.load(fis);
-		String BROWSER = pObj.getProperty("bro");
-		String URL = pObj.getProperty("url");
-		String USERNAME = pObj.getProperty("un");
-		String PASSWORD = pObj.getProperty("pwd");
-
-		FileInputStream fis1 = new FileInputStream("C:\\Users\\User\\git\\E2_new_batch\\vtiger-crm-framework-m16\\src\\test\\resources\\testScriptDataE2.xlsx");
-		Workbook wb = WorkbookFactory.create(fis1);
-		Sheet sh = wb.getSheet("leads");
-		Row row = sh.getRow(1);
-		Cell cell = row.getCell(0);
-		cell.setCellValue("Hey");
+		FileUtility fUtil = new FileUtility();
 		
+//		getting data from properties file		
+		String BROWSER = fUtil.getDataFromPropertyFile("bro");
+		String URL = fUtil.getDataFromPropertyFile("url");
+		String USERNAME = fUtil.getDataFromPropertyFile("un");
+		String PASSWORD = fUtil.getDataFromPropertyFile("pwd");
+
+//		Getting data from excel file
+		String lastName = fUtil.getDataFromExcelFile("leads", 1, 0);
+		String compName = fUtil.getDataFromExcelFile("leads", 1, 1);
+		String phoneNum = fUtil.getDataFromExcelFile("leads", 1, 2);
 		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -57,9 +53,9 @@ public class CreateLeadsWithPhoneTest {
 		driver.findElement(By.linkText("Leads")).click();
 		driver.findElement(By.cssSelector("img[title='Create Lead...']")).click();
 
-		String lastName = "Bahadur";
-		String compName = "lensKart";
-		String phoneNum = "9182784587";
+//		String lastName = "Bahadur";
+//		String compName = "lensKart";
+//		String phoneNum = "9182784587";
 
 		WebElement ln = driver.findElement(By.name("lastname"));
 		ln.sendKeys(lastName);
@@ -92,8 +88,11 @@ public class CreateLeadsWithPhoneTest {
 //		Logout
 //		hover on profile
 		WebElement profile = driver.findElement(By.cssSelector("img[src='themes/softed/images/user.PNG']"));
-		Actions act = new Actions(driver);
-		act.moveToElement(profile).build().perform();
+
+//		Actions act = new Actions(driver);
+//		act.moveToElement(profile).build().perform();
+		WebDriverUtility wdUtil = new WebDriverUtility(driver);
+		wdUtil.hover(profile);
 
 		driver.findElement(By.linkText("Sign Out")).click();
 
