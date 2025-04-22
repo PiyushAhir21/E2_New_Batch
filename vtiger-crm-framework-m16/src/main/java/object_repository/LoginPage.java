@@ -1,5 +1,6 @@
 package object_repository;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,14 +14,14 @@ public class LoginPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	
-
 	@FindBy(name = "user_name")
 	private WebElement un;
 
 	public WebElement getUn() {
 		return un;
 	}
+	
+
 	
 	@FindBy(name = "user_password")
 	private WebElement pwd;
@@ -35,4 +36,18 @@ public class LoginPage {
 	public WebElement getLoginBtn() {
 		return loginBtn;
 	}
+	
+//	Business utility
+	public void login() {
+		
+		WebElement un = getUn();
+		WebElement pwd = getPwd();
+		WebElement btn =  getLoginBtn();
+
+		un.sendKeys("admin");
+		pwd.sendKeys("password");
+		btn.click();
+	}
+	
+	
 }
