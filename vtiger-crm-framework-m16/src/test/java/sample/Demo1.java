@@ -1,15 +1,16 @@
 package sample;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import leadsTest.BaseClass;
-
-public class Demo1 extends BaseClass {
+public class Demo1 {
 
 	@Test
 	public void add() throws InterruptedException {
-		Thread.sleep(3000);
-		System.out.println("This is add method...");
+		WebDriver driver = new ChromeDriver();
+		Thread.sleep(5000);
+		driver.close();
 	}
-	
+
 }
