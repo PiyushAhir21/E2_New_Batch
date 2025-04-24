@@ -2,6 +2,8 @@ package sample;
 
 import org.testng.annotations.Test;
 
+import leadsTest.BaseClass;
+
 public class Demo1 extends BaseClass {
 
 	@Test
