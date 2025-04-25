@@ -1,18 +1,14 @@
 package leadsTest;
 
 import java.io.IOException;
-import java.time.Duration;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import generic_utility.FileUtility;
-import generic_utility.WebDriverUtility;
+import base_utility.BaseClass;
 
 public class CreateLeadsWithPhoneTest extends BaseClass {
 

@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 
-import leadsTest.BaseClass;
+import base_utility.BaseClass;
 
 public class Demo3 {
 

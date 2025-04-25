@@ -1,25 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-24T16:57:22 IST" name="Suite" finished-at="2025-04-24T16:57:30 IST" duration-ms="8181">
+  <suite started-at="2025-04-25T16:53:40 IST" name="Suite" finished-at="2025-04-25T16:53:40 IST" duration-ms="72">
     <groups>
+      <group name="regression">
+        <method signature="GroupExecution.add()[pri:0, instance:sample.GroupExecution@33d512c1]" name="add" class="sample.GroupExecution"/>
+        <method signature="GroupExecution.div()[pri:0, instance:sample.GroupExecution@33d512c1]" name="div" class="sample.GroupExecution"/>
+        <method signature="GroupExecution.mul()[pri:0, instance:sample.GroupExecution@33d512c1]" name="mul" class="sample.GroupExecution"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="GroupExecution.add()[pri:0, instance:sample.GroupExecution@33d512c1]" name="add" class="sample.GroupExecution"/>
+      </group> <!-- smoke -->
     </groups>
-    <test started-at="2025-04-24T16:57:22 IST" name="Test1" finished-at="2025-04-24T16:57:29 IST" duration-ms="7031">
-      <class name="sample.Demo1">
-        <test-method signature="add()[pri:0, instance:sample.Demo1@1bb5a082]" started-at="2025-04-24T16:57:22 IST" name="add" finished-at="2025-04-24T16:57:29 IST" duration-ms="6985" status="PASS">
+    <test started-at="2025-04-25T16:53:40 IST" name="Test" finished-at="2025-04-25T16:53:40 IST" duration-ms="72">
+      <class name="sample.GroupExecution">
+        <test-method signature="add()[pri:0, instance:sample.GroupExecution@33d512c1]" started-at="2025-04-25T16:53:40 IST" name="add" finished-at="2025-04-25T16:53:40 IST" duration-ms="9" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- add -->
-      </class> <!-- sample.Demo1 -->
-    </test> <!-- Test1 -->
-    <test started-at="2025-04-24T16:57:22 IST" name="Test2" finished-at="2025-04-24T16:57:30 IST" duration-ms="8181">
-      <class name="sample.Demo3">
-        <test-method signature="multi()[pri:0, instance:sample.Demo3@55fe41ea]" started-at="2025-04-24T16:57:22 IST" name="multi" finished-at="2025-04-24T16:57:30 IST" duration-ms="8137" status="PASS">
+        <test-method signature="div()[pri:0, instance:sample.GroupExecution@33d512c1]" started-at="2025-04-25T16:53:40 IST" name="div" finished-at="2025-04-25T16:53:40 IST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- multi -->
-      </class> <!-- sample.Demo3 -->
-    </test> <!-- Test2 -->
+        </test-method> <!-- div -->
+        <test-method signature="mul()[pri:0, instance:sample.GroupExecution@33d512c1]" started-at="2025-04-25T16:53:40 IST" name="mul" finished-at="2025-04-25T16:53:40 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mul -->
+      </class> <!-- sample.GroupExecution -->
+    </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

@@ -6,7 +6,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import leadsTest.BaseClass;
+import base_utility.BaseClass;
 
 public class Demo2 {
 

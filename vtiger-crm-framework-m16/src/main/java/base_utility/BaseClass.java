@@ -1,4 +1,4 @@
-package leadsTest;
+package base_utility;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -45,10 +45,12 @@ public class BaseClass {
 		System.out.println("Post - condition");
 	}
 
+
 	@BeforeClass
 	public void bc() throws IOException {
 		String BROWSER = fUtil.getDataFromPropertyFile("bro");
 		String URL = fUtil.getDataFromPropertyFile("url");
+
 
 		if (BROWSER.equalsIgnoreCase("chrome")) {
 			driver = new ChromeDriver();
@@ -64,7 +66,7 @@ public class BaseClass {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		driver.get(URL);
 	}
- 
+
 	@AfterClass
 	public void ac() {
 		driver.close();
