@@ -3,12 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="sample.ParallelKaExtraExample">
+      <class name="listeners_utility.Practice">
         <methods>
-          <include name="beforeClass"/>
-          <include name="add"/>
+          <include name="dummy1"/>
         </methods>
-      </class> <!-- sample.ParallelKaExtraExample -->
+      </class> <!-- listeners_utility.Practice -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

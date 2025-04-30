@@ -1,8 +1,5 @@
 package extra;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -12,36 +9,24 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class AdvanceReports {
+	ExtentReports reports;
+
+//	@BeforeSuite
+//	public void reportConfig() {
+//
+//	}
 
 	@Test
 	public void generateAdReport() {
-		LocalDateTime now = LocalDateTime.now();
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("ddMMyyyy_HHmmss");
-//															28042025_164859
-		String time = now.format(dtf);
-
-		ExtentSparkReporter spark = new ExtentSparkReporter(
-				"C:\\Users\\User\\git\\E2_new_batch\\vtiger-crm-framework-m16\\AdvanceReports\\" + time + ".html");
-		spark.config().setDocumentTitle("vtiger-crm-automation-framework");
-		spark.config().setReportName("Beginning");
-		spark.config().setTheme(Theme.DARK);
-
-		ExtentReports reports = new ExtentReports();
-		reports.attachReporter(spark);
-		reports.setSystemInfo("O.S.", "Windows");
-		reports.setSystemInfo("VersionOS", "11");
-		reports.setSystemInfo("Browser", "Chrome");
 
 		ExtentTest test = reports.createTest("generateAdReport");
 		test.log(Status.INFO, "This is info...");
-		test.log(Status.SKIP, "This is skip...");
 		test.log(Status.WARNING, "This is warning...");
 		test.log(Status.PASS, "This is passed...");
 		test.log(Status.FAIL, "This is failed...");
+		test.log(Status.SKIP, "This is skip...");
 
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://facebook.com/");
@@ -51,6 +36,11 @@ public class AdvanceReports {
 		test.addScreenCaptureFromBase64String(ss);
 
 		driver.close();
-		reports.flush();
+
 	}
+
+//	@AfterSuite
+//	public void repBackup() {
+//
+//	}
 }
