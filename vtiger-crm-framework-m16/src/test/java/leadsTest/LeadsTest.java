@@ -29,6 +29,8 @@ public class LeadsTest extends BaseClass {
 		cn.sendKeys(compName);
 
 //		save
+		
+//		This is what we have added after clone and import
 		driver.findElement(By.cssSelector("input[class='crmButton small save']")).click();
 
 //		verification
