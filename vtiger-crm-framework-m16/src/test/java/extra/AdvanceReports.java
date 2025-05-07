@@ -20,7 +20,7 @@ public class AdvanceReports {
 
 	@Test
 	public void generateAdReport() {
-
+//change for push example
 		ExtentTest test = reports.createTest("generateAdReport");
 		test.log(Status.INFO, "This is info...");
 		test.log(Status.WARNING, "This is warning...");
